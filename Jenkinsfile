@@ -2,7 +2,7 @@ pipeline {
     agent { docker { image 'golang' } }
 
     environment {
-	THREAD=10
+	THREADS=10
         TIMEOUT=3000
     }
 
