@@ -17,6 +17,12 @@ pipeline {
             steps {
                 sh 'go test'
             }
-        }
+         }
+	
+       stage('Package') {
+           steps {
+               sh 'docker build -t rmauge/webby .'
+           }
+       }
     }
 }
