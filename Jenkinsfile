@@ -7,16 +7,15 @@ pipeline {
     }
 
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                sh 'echo "Step 1" THREADS=${THREADS}'
-                sh 'go version'
+                sh 'go build webby'
             }
         }
 
-        stage('Sanity check') {
+        stage('Test') {
             steps {
-                input "Does the staging environment look ok?"
+                sh 'go test'
             }
         }
     }
