@@ -27,7 +27,7 @@ pipeline {
        
        stage('Deploy') {
            steps {
-               sh 'docker run -p 8888:8080 --name "webby" rmauge/webby'
+               sh 'docker run -d -p 8888:8080 --name "webby" rmauge/webby'
            }
        }
     }
